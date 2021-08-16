@@ -1,0 +1,16 @@
+version: "3.9"
+services:
+    web-api:
+        build: './src/WebApi'
+        ports:
+            - "5000:5010"
+        environment:
+            - "Api__WeatherApi__Url=http://weather-service:5020"
+        container_name: web-api
+        
+    weather:
+        build: './src/WeatherService'
+        container_name: weather-service
+
+
+    
